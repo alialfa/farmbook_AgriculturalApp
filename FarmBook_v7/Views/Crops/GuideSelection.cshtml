@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "GuideSelection";
+}
+
+<h2>
+    Learn Something New ~ FarmBook Guides <img src="@Url.Content("~/Images/flower.gif")" />
+</h2>
+
+ 
+
+<font size="6" color="orange">
+    <ul>
+        <li>@Html.ActionLink("Basic Equipment Essentials", "Details/7", "Guides")</li> <!-- -->
+        <li>@Html.ActionLink("Sow Your Seeds", "Details/1", "Guides")</li> <!-- Sowing Seeds -->
+        <li>@Html.ActionLink("Watering", "Details/4", "Guides")</li> <!-- -->
+        <li>@Html.ActionLink("Pruning", "Details/6", "Guides")</li> <!-- -->
+        <li>@Html.ActionLink("Weeding", "Details/5", "Guides")</li> <!-- -->
+        <li>@Html.ActionLink("Learn Suitable Garden Designs", "Details/2", "Guides")</li> <!-- Gardens -->
+        <li>@Html.ActionLink("Terms & Definitions", "Details/3", "Guides")</li> <!-- Glossary -->
+    </ul>
+</font>

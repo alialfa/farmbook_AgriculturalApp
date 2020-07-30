@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1><center> Welcome to FARMBOOK</center>
+                    <b><i><center>| @ViewBag.Message |</center></i></b>
+                </h1>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<center>
+    <font size="5">
+        <b>
+            <!-- <i> -->
+                Hi <font color="blue"> @User.Identity.Name </font>, Welcome to our fun and exciting page!! <br />
+            We offer informative expert advise on farming and give you the platform to intereact with like-minded farmers<br />
+            <!-- </i> -->
+        </b>
+    </font>
+</center>
+
+<hr /> <!-- horizontal bar-->
+
+
+<hr /> 
+<!-- home page images go here -->
+<div id="Farming">
+    <!-- redirect an image; someAction, someController -->
+    <a href="@Url.Action("Index", "Crops/Index")">
+        <img src="@Url.Content("~/Images/newFarmerPic.jpg")"/>
+    </a>
+
+   <!-- redirect an image; someAction, someController -->
+    <a href="@Url.Action("Index", "Community")">
+        <img src="@Url.Content("~/Images/fb_community.jpg")" />
+    </a>
+
+       <!-- redirect an image; someAction, someController -->
+    <a href="@Url.Action("Index", "Crops/GettingStarted")">
+        <img src="@Url.Content("~/Images/fb_business.jpg")" />
+    </a>
+
+</div>
+
+<hr /> <!-- horizontal bar-->
+
+<center>
+    <font size="10">
+        
+        Farming is FUN!
+        </font>
+    </center>

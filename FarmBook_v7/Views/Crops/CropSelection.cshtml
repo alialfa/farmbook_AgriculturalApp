@@ -1,0 +1,62 @@
+﻿@model IEnumerable<FarmBook_v7.Models.Crop>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Learn How To Farm A Specific Crop</h2>
+
+<aside>
+    <p> @Html.ActionLink("Back to Farming Menu", "Index", "Crops")    </p>
+</aside>
+
+<h3><i>Please click on your preference from one of our crop categories :</i> </h3> <br />
+
+<div id="Fruits">
+    
+    <h2><font color="purple">   Fruits </font></h2> <br />
+    
+    <!-- redirect an image; someAction, someController -->
+    <a href="@Url.Action("Details/1", "Crops")">
+        <img src="@Url.Content("~/Images/crops/crops_borders/apples.jpg")" />
+    </a>
+    <a href="@Url.Action("Details/2", "Crops")">
+        <img src="@Url.Content("~/Images/crops/crops_borders/grapes.jpg")" />
+    </a>
+    <a href="@Url.Action("Details/3", "Crops")">
+        <img src="@Url.Content("~/Images/crops/crops_borders/oranges.jpg")" />
+    </a>
+</div>
+<div id="Veg">
+    
+    <h2><font color="purple">   Vegetables </font></h2> <br />
+    
+    <a href="@Url.Action("Details/4", "Crops")">
+        <img src="@Url.Content("~/Images/crops/crops_borders/potatoes.jpg")" />
+    </a>
+    <a href="@Url.Action("Details/5", "Crops")">
+        <img src="@Url.Content("~/Images/crops/crops_borders/tomatoes.jpg")" />
+    </a>
+    <a href="@Url.Action("Details/6", "Crops")">
+        <img src="@Url.Content("~/Images/crops/crops_borders/onions.jpg")" />
+    </a>
+    <!--<a href="Url.Action("Details/8", "Crops")">
+        <img src="Url.Content("~/Images/crops/cabbages.jpg")" />
+    </a>-->
+</div>
+<div id="Grains">
+    
+    <h2><font color="purple">   Grains </font></h2> <br />
+
+    <a href="@Url.Action("Details/7", "Crops")">
+        <img src="@Url.Content("~/Images/crops/crops_borders/maize.jpg")" />
+    </a>
+    <a href="@Url.Action("Details/8", "Crops")">
+        <img src="@Url.Content("~/Images/crops/crops_borders/wheat.jpg")" />
+    </a>
+    <a href="@Url.Action("Details/9", "Crops")">
+        <img src="@Url.Content("~/Images/crops/crops_borders/sunflower.jpg")" />
+    </a>
+</div>
+    

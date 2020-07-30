@@ -1,0 +1,37 @@
+﻿@model IEnumerable<FarmBook_v7.Models.Supplier>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Supplier Search:</h2>
+
+<p>
+    @using (Html.BeginForm("Search", "Suppliers", FormMethod.Get))
+    {
+    <p>
+        Location: @Html.DropDownList("supplierLocation", "All") <br />
+         <input type="submit" value="Filter Search" />
+    </p>
+    }
+    </p>
+
+
+    @foreach (var item in Model)
+    {
+
+        <p>
+            <font color="green"><b>Supplier Name :</b></font>
+            @Html.DisplayFor(modelItem => item.SupplierName)
+        </p>
+        <p>
+            <font color="green"><b>Supplier Address :</b></font>
+            @Html.DisplayFor(modelItem => item.SupplierAddress)
+        </p>
+        <p>
+            <font color="green"><b>Supplier Speciality :</b></font>
+            @Html.DisplayTextFor(modelItem => item.SupplierContent)
+        </p>
+
+        <hr />
+    }

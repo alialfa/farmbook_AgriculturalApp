@@ -1,0 +1,33 @@
+﻿@model FarmBook_v7.Models.Upload
+@{
+    ViewBag.Title = "FileUpload";
+}
+
+<h2>Story Creation Prep</h2>
+
+<aside>
+    <p> @Html.ActionLink("Back to Community Menu", "Index", "Community")    </p>
+</aside>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table>
+        <tr>
+            <h6>
+                <font color="blue">Please Upload Any Reference Files Before Story Creation ...</font>
+            </h6>
+
+            <td><b>Data Upload [ .jpg .png .mp4 ]</b></td>
+            <td><input type="file" name="Files" id="Files" multiple /></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" name="submit" value="Upload" /></td>
+        </tr>
+        <tr>
+            <td>
+                <h6><br />@Html.ActionLink("I do not wish to upload, PROCEED", "Create", "Stories")</h6>
+            </td>
+        </tr>
+    </table>
+}

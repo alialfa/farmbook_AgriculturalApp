@@ -1,0 +1,28 @@
+﻿@model FarmBook_v7.Models.Guide
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<aside>
+    <p>
+        @Html.ActionLink("Back to Guides Index", "GuideSelection", "Crops")
+    </p>
+</aside>
+
+@*<h2>Details</h2>*@
+
+    <fieldset>
+        <legend>Guide</legend>
+
+        <h2>
+            <font color="brown">
+                Guide:    @Html.DisplayFor(model => model.GuideName)
+            </font>
+        </h2>
+
+        <div class="display-field">
+            @Html.DisplayTextFor(model => model.GuideContent)
+        </div>
+    </fieldset>
+

@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Weather";
+}
+
+<h2>Live Weather Update:</h2>
+
+<aside><font size="6" color="yellow">
+    <ul>
+        <li>
+            <center>@Html.ActionLink("REFRESH", "Weather", "Community")</center>
+        </li>
+    </ul>
+    <img src="@Url.Content("~/Images/weather_update.jpg")" width="280px" height="280px" />
+</font></h2>
+
+</aside>
+
+<h3>
+    @Html.Raw(@ViewBag.Coordinates)
+</h3>
+
+@using (Html.BeginForm("Weather", "Community", FormMethod.Get))
+{
+    <p>
+        City Name: @Html.DropDownList("CityName", new SelectList(new [] 
+                                                                       {"Alexander Bay",
+                                                                        "Bloemfontein",
+                                                                        "Bethlehem",
+                                                                        "Cape Town",
+                                                                        "Calvinia",
+                                                                        "Durban Louis Botha",
+                                                                        "East London",
+                                                                        "George",
+                                                                        "Hoedspruit",
+                                                                        "Pretoria",
+                                                                        "Jan Smuts",
+                                                                        "Kimberley",
+                                                                        "Lichtenburg",
+                                                                        "Langebaanweg",
+                                                                        "Mmabatho",
+                                                                        "Nelspruit",
+                                                                        "Pietersburg",
+                                                                        "Port Elizabeth",
+                                                                        "Phalaborwa",
+                                                                        "Pretoria",
+                                                                        "Richard Bay",
+                                                                        "Springbok",
+                                                                        "Upington",
+                                                                        "Umtata",
+                                                                        "Vryburg",
+                                                                        "Vredendal",
+                                                                        "Waterkloof Lmb"})) 
+        <input type="submit" value="Get Weather" />
+    </p>
+}
+
+@*Html.Raw(@ViewBag.string)*@
+@ViewBag.WeatherUpdate
+
+<h3>
+    <b>
+        <i>Weather Results:</i> <br />
+        
+        <font color="blue">
+            <font color="green">Location          |</font> @ViewBag.Location <br /><br />
+            <font color="green">Time              |</font> @ViewBag.Time <br /><br />
+            <font color="green">Wind              |</font> @ViewBag.Wind <br /><br />
+            <font color="green">Sky Conditions    |</font> @ViewBag.SkyConditions <br /><br />
+            <font color="green">Visibility        |</font> @ViewBag.Visibility <br /><br />
+            <font color="green">Temperature       |</font> @ViewBag.Temperature <br /><br />
+            <font color="green">DewPoint          |</font> @ViewBag.DewPoint <br /><br />
+            <font color="green">Relative Humidity |</font> @ViewBag.RelativeHumidity <br /><br />
+            <font color="green">Pressure          |</font> @ViewBag.Pressure <br />            
+        </font>
+    </b>
+</h3>
+
+@ViewBag.Error

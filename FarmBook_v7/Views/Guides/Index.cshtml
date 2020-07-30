@@ -1,0 +1,41 @@
+﻿@model IEnumerable<FarmBook_v7.Models.Guide>
+
+@{
+    ViewBag.Title = "Guide Selection";
+}
+
+<h2>Learn Something New ~ View Our FarmBook Guides</h2>
+
+@*
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GuideName)
+        </th>
+        <th>
+            @*Html.DisplayNameFor(model => model.GuideContent)*@
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuideName)
+        </td>
+        <td>
+            @*Html.DisplayTextFor(modelItem => item.GuideContent)*@
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("View Guide", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

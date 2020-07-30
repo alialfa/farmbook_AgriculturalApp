@@ -1,0 +1,64 @@
+﻿@model FarmBook_v7.Models.Crop
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Crop</legend>
+
+        @Html.HiddenFor(model => model.CropID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CropName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CropName)
+            @Html.ValidationMessageFor(model => model.CropName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CropLocation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CropLocation)
+            @Html.ValidationMessageFor(model => model.CropLocation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CropContent)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CropContent)
+            @Html.ValidationMessageFor(model => model.CropContent)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CropExtra)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CropExtra)
+            @Html.ValidationMessageFor(model => model.CropExtra)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @*Scripts.Render("~/bundles/jqueryval")*@
+    @Scripts.Render("~/bundles/jquery.validate.js")
+    @Scripts.Render("~/bundles/tinymce")
+}

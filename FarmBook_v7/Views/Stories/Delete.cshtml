@@ -1,0 +1,42 @@
+﻿@model FarmBook_v7.Models.Story
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3><br />
+<fieldset>
+    <legend>Story</legend>
+    <b>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Author)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Author)
+        </div><br />
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Title)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Title)
+        </div><br />
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.PostedOn)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PostedOn)
+        </div>
+    </b>
+
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

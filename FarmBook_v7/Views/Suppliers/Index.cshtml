@@ -1,0 +1,19 @@
+﻿@using FarmBook_v7.Models;
+
+@model IEnumerable<Supplier>
+
+@{
+    ViewBag.Title = "Suppliers";
+}
+
+<div style="font-family:Arial">
+<h2>Suppliers List</h2>
+    <ul>
+        @foreach (Supplier supplier in @Model)
+        {
+            <li>
+                @Html.ActionLink(supplier.SupplierName, "Details", new { id = supplier.SupplierID })
+            </li>
+        }
+    </ul>
+</div>

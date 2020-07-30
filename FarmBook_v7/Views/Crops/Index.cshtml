@@ -1,0 +1,37 @@
+﻿@model IEnumerable<FarmBook_v7.Models.Crop>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Farming Menu</h2>
+
+<h3><i>Please select a walkthrough that is of relevance to you :</i> </h3> <br />
+
+<!-- Form for crop farming walkthroughs -->
+<center>
+    <form>
+        <fieldset>
+            <ol class="round">
+                <li class="four">
+                    <h5><i>Getting Started - Farming For Enterpreneuers</i></h5>
+                    <!-- redirect an image; someAction, someController -->
+                    @Html.ActionLink("Click Here", "Index", "Crops/GettingStarted")
+                </li>
+                <li class="five">
+                    <h5><i>Gardening & Farming ~ Use Our FarmBook Guide(s)</i></h5>
+                    <!-- redirect an image; someAction, someController -->
+                    @Html.ActionLink("Click Here", "Index", "Crops/GuideSelection")
+                </li>
+                <li class="six">
+                    <h5><i>Fruits, Veggies & Grains</i></h5>
+                    @Html.ActionLink("Click Here", "Index", "Crops/CropSelection")
+                </li>
+                <li class="seven">
+                    <h5><i>Get Current Weather</i></h5>
+                    @Html.ActionLink("Click Here", "Index", "Community/Weather")
+                </li>
+            </ol>
+        </fieldset>
+    </form>
+</center>

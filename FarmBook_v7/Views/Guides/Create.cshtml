@@ -1,0 +1,44 @@
+﻿@model FarmBook_v7.Models.Guide
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Guide</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GuideName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GuideName)
+            @Html.ValidationMessageFor(model => model.GuideName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GuideContent)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GuideContent)
+            @Html.ValidationMessageFor(model => model.GuideContent)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

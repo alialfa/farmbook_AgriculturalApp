@@ -1,0 +1,64 @@
+﻿@model IEnumerable<FarmBook_v7.Models.Story>
+
+@{
+    ViewBag.Title = "Stories List";
+}
+
+<h2>View Success Stories by Other FarmBook Subscribers</h2>
+
+<p><b>
+    @Html.ActionLink("Share Your Own", "FileUpload")
+</b></p>
+
+
+<table>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <h3>
+                    Title : <font color="indigo"><i>@Html.DisplayFor(modelItem => item.Title)</i></font>
+                </h3>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Author
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostedOn)
+            </th>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostedOn)
+            </td>
+            <td>
+                @Html.ActionLink("View Story", "Details", new { id = item.StoryID }) |
+                @*Html.ActionLink("Edit Story", "Edit", new { id = item.StoryID }) |*@
+                @*Html.ActionLink("Delete Story", "Delete", new { id = item.StoryID })*@
+            </td>
+        </tr>
+    }
+
+</table>
+
+@*
+        var aname = modelItem => item.Author
+    if ( aname == @User.Identity.Name)
+    {
+        @Html.ActionLink("View Story", "Details", new { id = item.StoryID })
+        @Html.ActionLink("Edit Story", "Edit", new { id = item.StoryID }) |
+        @Html.ActionLink("Delete Story", "Delete", new { id = item.StoryID })
+    }
+    else
+    {
+        @Html.ActionLink("View Story", "Details", new { id = item.StoryID }) |
+    }
+
+*@

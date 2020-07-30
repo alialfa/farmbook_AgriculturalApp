@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "About Us";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+    <!--<h2>
+        <font color="green">
+            @ViewBag.Message
+        </font>
+    </h2>-->
+</hgroup>
+
+<article>
+    <p>
+        FarmBook is led by a team of technological innovators whom care deeply about supporting the success of new farmers. 
+        It is housed at the <b>Farm Book Small Farms Program</b> in Camps Bay, Cape Town and is proudly funded by the Department of South African Agriculture, <b>EXPFARM Project #2014-0808-0007</b> and a grant from the Communtiy Development Program CDP.
+    </p>
+
+    <p>
+        We at FarmBook have sought to provide a <b>community-based farming application</b> for small-scale or hobby farming enthusiasts. 
+    </p>
+    
+    <p>
+        Recent research has revealed that the farming practice has often become difficult to manage and undertake for new and inexperienced farmers.
+        Due to unpredictable weather, immense effect of pests and unfavourable soil conditions; farming is deemed a tough venture for newbie agriculturalists.
+    </p>
+
+    <p>
+        This website is one of our many ongoing & upcoming projects. Through FarmBook's social fabric we hope that members of our site can share and learn amongst each other in areas pertaining to their respective interests.
+    </p>
+
+    <p>
+        Feel free to contact us for any general or technical queries. <br />
+        Hope you enjoy the FarmBook experience - <b>Andreas, Palesa & Ali</b> :)
+    </p>
+</article>
+
+
+<aside>
+    <h3>Quick Links</h3>
+    <p>
+        Use this area to get additional information.
+    </p>
+    <ul>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    </ul>
+</aside>

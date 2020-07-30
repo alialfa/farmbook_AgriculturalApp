@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Community Menu</h2>
+
+<h3><i>Please select a walkthrough that is of relevance to you :</i> </h3> <br />
+
+<!-- Form for community walkthroughs -->
+<center>
+    <form>
+        <fieldset>
+            <ol class="round">
+                <li class="zero">
+                    <h5><i>Wanna Chat ? Get Quick Responses from FarmBook Users Online</i></h5>
+                    <!-- redirect an image; someAction, someController -->
+                    @Html.ActionLink("Click Here", "Chat", "Chat")
+                </li>
+                <li class="zero1">
+                    <h5><i>Get Motivated - Learn From Others' Success Stories</i></h5>
+                    @Html.ActionLink("Click Here", "Index", "Stories")
+                </li>
+                <li class="zero2">
+                    <h5><i>Share your own Story</i></h5>
+                    @Html.ActionLink("Click Here", "FileUpload", "Stories")
+                </li>
+            </ol>
+        </fieldset>
+    </form>
+</center>

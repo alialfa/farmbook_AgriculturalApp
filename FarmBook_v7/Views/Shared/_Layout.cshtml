@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - FarmBook App</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+
+            <div class="float-left">
+                <!-- redirect an image; someAction, someController -->
+                <a href="@Url.Action("Index", "Home")">
+                 <!-- logo -->
+                    <img id=" img_logo" alt="Logo" src="@Url.Content("~/Images/fb_title1.jpg")" />
+                    <!--     <p class="site-title">Html.ActionLink("FARM_BOOK", "Index", "Home")</p> -->
+                </a>
+            </div>      
+                 
+            <div class="float-right">
+                <section id="login">
+                    <b>@Html.Partial("_LoginPartial")</b>
+                </section>
+
+                <nav>
+                    <ul id="menu">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Farming", "Index", "Crops")
+                            <ul>
+                                <li>@Html.ActionLink("Get Started", "GettingStarted", "Crops")</li>
+                                <li>@Html.ActionLink("Our Guides", "GuideSelection", "Crops")</li>
+                                <li>@Html.ActionLink("Crops", "CropSelection", "Crops")</li>
+                                @*<li>Html.ActionLink("Supplier Listing", "Index", "Suppliers")</li>*@
+                            </ul>
+                        </li>
+                        <li>
+                            @Html.ActionLink("Search", "Search", "Crops")
+                            <ul>
+                                <li>@Html.ActionLink("Crop LookUP", "Search", "Crops")</li>
+                                <li>@Html.ActionLink("Supplier LookUP", "Search", "Suppliers")</li>
+                            </ul>
+                        </li>
+                        <li>@Html.ActionLink("Community", "Index", "Community")
+                            <ul>
+                                <li>@Html.ActionLink("Chat Now", "Chat", "Chat")</li>
+                                <li>@Html.ActionLink("Success Stories", "Index", "Stories")</li>
+                                <li>@Html.ActionLink("Share Story", "FileUpload", "Stories")</li>
+                            </ul>
+                        </li>
+                        <li>@Html.ActionLink("Weather", "Weather", "Community")</li>
+                        <li>
+                            @Html.ActionLink("FarmBook", "Index", "Home")
+                            <ul>
+                                <li>@Html.ActionLink("Account", "Manage", "Account")</li>
+                                <li>@Html.ActionLink("About", "About", "Home")</li>
+                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+
+    <footer> <!-- footer disclaimer & quick links -->
+        <div class="content-wrapper">
+            <div class="float-right">
+                <center>
+                    <font size="3" color="blue"><p>&copy; FarmBook @DateTime.Now.Year . Proudly Powered by UCT ~ ExpFarm. All rights reserved.</p></font>
+                    <hr />
+                    <font size="3">
+                        <font color="blue"><b>QUICK LINKS :</b></font>
+                        @Html.ActionLink("Home", "Index", "Home") | @Html.ActionLink("Search", "Index", "Crops/Search") | @Html.ActionLink("Chat", "Chat", "Chat") | @Html.ActionLink("About", "About", "Home") | @Html.ActionLink("Contact", "Contact", "Home")
+                    </font>
+</center>
+            </div>
+        </div>
+    </footer>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

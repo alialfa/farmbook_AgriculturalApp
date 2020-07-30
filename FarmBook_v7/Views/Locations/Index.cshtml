@@ -1,0 +1,22 @@
+﻿@using FarmBook_v7.Models;
+
+@model IEnumerable<Location>
+
+@{
+    ViewBag.Title = "Locations";
+}
+
+<div style="font-family:Arial">
+    <h2>Provinces List</h2>
+    <ul>
+        @foreach (Location location in @Model)
+        {
+            <li>
+                @Html.ActionLink(location.LocationName, "Index", "Suppliers", new { locationid = location.ID }, null)
+            </li>
+        }
+    </ul>
+</div>
+
+
+ 

@@ -1,0 +1,46 @@
+﻿@model FarmBook_v7.Models.Supplier
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Supplier Details</h2>
+
+<aside>
+    <p>
+        @Html.ActionLink("Back to Suppler LOOKUP", "Search", "Suppliers")
+    </p>
+</aside>
+
+<fieldset>
+    <legend>Supplier</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SupplierName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SupplierName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SupplierLocation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SupplierLocation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SupplierAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SupplierAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SupplierContent)
+    </div>
+    <div class="display-field">
+        @Html.DisplayTextFor(model => model.SupplierContent)
+    </div>
+</fieldset>
+

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<FarmBook_v7.Models.Crop>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Crop Search:</h2>
+
+<p>
+    @using (Html.BeginForm("Search","Crops",FormMethod.Get)){
+    <p>
+        @*Location: @Html.DropDownList("cropLocation", "All") <br />*@    
+        Crop Name: @Html.TextBox("SearchString")
+        <input type="submit" value="Filter Search" />
+    </p>
+    }
+</p>
+           
+    
+@foreach (var item in Model)
+{
+
+    <p>
+        <font color="green"><b>Crop Name :</b></font>
+        @Html.DisplayFor(modelItem => item.CropName)
+    </p>
+    <p>
+        <font color="green"><b>Crop Location :</b></font>
+        @Html.DisplayFor(modelItem => item.CropLocation)
+    </p>
+    <p>
+        <font color="green"><b>Crop Cultivation, Care & Control :</b></font>
+        @Html.DisplayTextFor(modelItem => item.CropContent)
+    </p>
+
+    <hr />
+}
+
+

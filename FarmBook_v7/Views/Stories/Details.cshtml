@@ -1,0 +1,48 @@
+﻿@model FarmBook_v7.Models.Story
+
+@{
+    ViewBag.Title = "Success Stories";
+}
+
+<h2>
+    Success Story ~
+    <b>EntryNo #@Html.DisplayFor(model => model.StoryID)</b>
+</h2>
+<br />
+
+<aside>
+    <p> @Html.ActionLink("Back to Shared Stories", "Index", "Stories")    </p>
+</aside>
+
+<fieldset>
+    <legend>StoryPost</legend>
+    <h2>
+        <font color="green"><b>@Html.DisplayNameFor(model => model.Title) :</b></font>
+        @Html.DisplayFor(model => model.Title)
+        <br /><br />
+
+        <font color="green"><b><i>@Html.DisplayNameFor(model => model.Author) :</i></b></font>
+        @Html.DisplayFor(model => model.Author)
+        <br />
+
+        <font color="green"><b><i>@Html.DisplayNameFor(model => model.PostedOn) :</i></b></font>
+        @Html.DisplayFor(model => model.PostedOn)
+        <br /><br />
+
+        @*<font color="green"><b><i>FarmBook Creator :</i></b></font>
+             @User.Identity.Name
+            <br /><br />*@
+
+        <div class="display-label">
+            <font color="green"><b>@Html.DisplayNameFor(model => model.Content) :</b></font>
+        </div>
+    </h2>
+        <div class="display-field">
+            @Html.DisplayTextFor(model => model.Content)
+        </div><br />
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StoryID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
